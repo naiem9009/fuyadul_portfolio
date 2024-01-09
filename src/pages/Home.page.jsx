@@ -78,7 +78,7 @@ const HomePage = () => {
                     {/*<SectionWrapper>*/}
                     <div className='mt-20 flex md:flex-row flex-col justify-around items-center font-roboto md:gap-0 gap-4'>
 
-                        <div className='md:w-1/3 w-1/2'>
+                        <div className='md:w-1/3 w-3/4'>
                             <img className='w-full h-full object-cover' src={aboutMe} alt="Fuyadul Islam"/>
                         </div>
 
