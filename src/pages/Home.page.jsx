@@ -16,7 +16,7 @@ const HomePage = () => {
                     <div
                         className='flex md:flex-row flex-col md:justify-between items-center md:gap-0 gap-6 font-roboto md:min-h-screen min-h-[80vh]'>
                         <div>
-                            <h1 className='text-2xl font-semibold mb-3'>Hey, I'm <span className="text-bold text-primary">Fuyadul Islam</span></h1>
+                            <h1 className='md:text-2xl text-xl font-semibold mb-3'>Hey, I'm <span className="text-bold text-primary">Fuyadul Islam</span></h1>
                             <h1 className='md:text-6xl text-3xl font-bold mb-3'>I am <span className='text-primary'>Web Developer</span>
                                 <br/> & Graphics Desinger</h1>
                             <p className='text-gray-500/60 mb-6'>Lorem ipsum dolor sit amet, consectetur adipiscing
