@@ -4,9 +4,11 @@ import selfImage from "../assets/image/self-photo.png"
 import aboutMeImage from "../assets/image/About-Me.png"
 import portfolioImage from "../assets/image/portfolio-image.png"
 import {Link} from "react-router-dom";
-import { skillsData } from "../../data.js";
+import { portfolioData, skillsData, testimonialData } from "../../data.js";
 import Skills from "../components/Skills.component.jsx";
 import About from "../components/About.component.jsx";
+import Portfolio from "../components/Portfolio.component.jsx";
+import Testimonial from "../components/Testimonial.component.jsx";
 
 
 const HomePage = () => {
@@ -47,75 +49,18 @@ const HomePage = () => {
                             <Skills key={index} icon={item.icon} heading={item.heading} content={item.content} />
                         ))}
                     </div>
-                    {/*</SectionWrapper>*/}
 
-
-                    {/*<SectionWrapper>*/}
-                    {/* <section id="about_me" className='mt-20 flex md:flex-row flex-col justify-around items-center font-roboto md:gap-0 gap-4'>
-
-                        <div className='md:w-1/3 w-3/4'>
-                            <img className='w-full h-full object-cover' src={aboutMe} alt="Fuyadul Islam"/>
-                        </div>
-
-                        <div className='md:w-1/2 w-full'>
-                            <h1 className='text-xl font-semibold mb-2'>About</h1>
-                            <h1 className='text-4xl font-bold mb-5'>About Me</h1>
-
-                            <p className='text-sm text-gray-700/60 mb-3'>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris
-                                duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in
-                                amet pellentesque.</p>
-
-                            <p className='text-sm text-gray-700/60'>Sit turpis pretium eget maecenas. Vestibulum dolor
-                                mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod
-                                risus r.</p>
-
-                        </div>
-
-                    </section> */}
                     <About aboutImage={aboutMeImage} />
-                    {/*</SectionWrapper>*/}
 
-
-                    {/*<SectionWrapper>*/}
 
                     <div className='mt-20 font-roboto pb-10'>
                         <h1 className='text-xl font-semibold'>Recent Project</h1>
                         <h1 className='text-4xl font-bold'>My Portfolio</h1>
 
                         <div className='mt-10 grid md:grid-cols-3 grid-cols md:gap-5 gap-3'>
-                            <div>
-                                <img className='' src={portfolioImage} alt="portfolio image"/>
-
-                                <div className='p-3'>
-                                    <h1 className='text-xl font-bold'>Ahuse</h1>
-                                    <p className='text-sm text-gray-600/80 mb-4'>Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Suspendisse varius enim in eros.</p>
-                                    <Link className='border-b border-gray-500' to=''>View In Github</Link>
-                                </div>
-                            </div>
-
-                            <div>
-                                <img className='' src={portfolioImage} alt="portfolio image"/>
-
-                                <div className='p-3'>
-                                    <h1 className='text-xl font-bold'>Ahuse</h1>
-                                    <p className='text-sm text-gray-600/80 mb-4'>Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Suspendisse varius enim in eros.</p>
-                                    <Link className='border-b border-gray-500' to=''>View In Github</Link>
-                                </div>
-                            </div>
-
-                            <div>
-                                <img className='' src={portfolioImage} alt="portfolio image"/>
-
-                                <div className='p-3'>
-                                    <h1 className='text-xl font-bold'>Ahuse</h1>
-                                    <p className='text-sm text-gray-600/80 mb-4'>Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Suspendisse varius enim in eros.</p>
-                                    <Link className='border-b border-gray-500' to=''>View In Github</Link>
-                                </div>
-                            </div>
+                            {portfolioData?.filter((_item, i) => i < 3)?.map((item, index) => (
+                                <Portfolio key={index} portfolioImage={item.image} heading={item.heading} content={item.content} />
+                            ))}
                         </div>
 
                     </div>
@@ -130,7 +75,13 @@ const HomePage = () => {
                        <h1 className='text-4xl font-bold'>Customer testimonials</h1>
 
                        <div className='grid md:grid-cols-3 grid-cols mt-5 md:gap-5 gap-3'>
-                           <div className='border border-[#006B6A] p-5 rounded-md'>
+
+                        {testimonialData?.filter((item, i) => item.rates >= 4)?.filter((_item, i) => i < 3)?.map((item, index) => (
+                            <Testimonial rates={item.rates} message={item.message} client={item.client} />
+                        ))}
+
+
+                           {/* <div className='border border-[#006B6A] p-5 rounded-md'>
                                <div className='flex flex-row gap-2 mb-2'>
                                    <i className="fi fi-sr-star"></i>
                                    <i className="fi fi-sr-star"></i>
@@ -141,7 +92,6 @@ const HomePage = () => {
                                <p className='mb-3 text-gray-600/60 text-sm'>Lorem ipsum dolor sit amet, consectetur
                                    adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi
                                    quis viverra.</p>
-                               {/*006B6A*/}
                                <div className='flex flex-row gap-3 items-center'>
                                    <img className='w-16 h-16 rounded-full object-cover'
                                         src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg"
@@ -152,57 +102,10 @@ const HomePage = () => {
                                        <p>JavaScript Developer</p>
                                    </div>
                                </div>
-                           </div>
+                           </div> */}
 
 
-                           <div className='border border-[#006B6A] p-5 rounded-md'>
-                               <div className='flex flex-row gap-2 mb-2'>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                               </div>
-                               <p className='mb-3 text-gray-600/60 text-sm'>Lorem ipsum dolor sit amet, consectetur
-                                   adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi
-                                   quis viverra.</p>
-                               {/*006B6A*/}
-                               <div className='flex flex-row gap-3 items-center'>
-                                   <img className='w-16 h-16 rounded-full object-cover'
-                                        src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg"
-                                        alt=""/>
-
-                                   <div>
-                                       <h1>Naim Hossen</h1>
-                                       <p>JavaScript Developer</p>
-                                   </div>
-                               </div>
-                           </div>
-
-
-                           <div className='border border-[#006B6A] p-5 rounded-md'>
-                               <div className='flex flex-row gap-2 mb-2'>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                                   <i className="fi fi-sr-star"></i>
-                               </div>
-                               <p className='mb-3 text-gray-600/60 text-sm'>Lorem ipsum dolor sit amet, consectetur
-                                   adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi
-                                   quis viverra.</p>
-                               {/*006B6A*/}
-                               <div className='flex flex-row gap-3 items-center'>
-                                   <img className='w-16 h-16 rounded-full object-cover'
-                                        src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg"
-                                        alt=""/>
-
-                                   <div>
-                                       <h1>Naim Hossen</h1>
-                                       <p>JavaScript Developer</p>
-                                   </div>
-                               </div>
-                           </div>
+         
                        </div>
                    </div>
                </SectionWrapper>

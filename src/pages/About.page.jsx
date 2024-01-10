@@ -6,6 +6,8 @@ import SectionWrapper from '../components/SectionWrapper.component'
 import About from '../components/About.component'
 import aboutMeImage from "../assets/image/About-Me.png"
 import { Link } from 'react-router-dom'
+import Skills from '../components/Skills.component'
+import { skillsData } from '../../data'
 
 const AboutPage = () => {
   return (
@@ -105,6 +107,20 @@ const AboutPage = () => {
 
       
       <SectionWrapper>
+
+      <div className='font-roboto mt-6'>
+            <h1 className='text-sm font-semibold'>Explore my skills</h1>
+            <h1 className='text-4xl font-bold'>My Skills</h1>
+        </div>
+
+        <div className='grid md:grid-cols-4 grid-cols md:gap-4 gap-2 font-roboto'>
+            {skillsData?.filter((_item, index) => index < 4)?.map((item, index) => (
+                <Skills key={index} icon={item.icon} heading={item.heading} content={item.content} />
+            ))}
+        </div>
+
+
+        
         <div className='md:w-1/2 w-full mt-6 font-roboto'>
           <h1 className='text-xl font-semibold mb-2'>Photo</h1>
           <h1 className='text-4xl font-bold mb-5'>My Gallary</h1>
