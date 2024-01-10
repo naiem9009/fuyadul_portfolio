@@ -77,7 +77,7 @@ const HomePage = () => {
                        <div className='grid md:grid-cols-3 grid-cols mt-5 md:gap-5 gap-3'>
 
                         {testimonialData?.filter((item, i) => item.rates >= 4)?.filter((_item, i) => i < 3)?.map((item, index) => (
-                            <Testimonial rates={item.rates} message={item.message} client={item.client} />
+                            <Testimonial key={index} rates={item.rates} message={item.message} client={item.client} />
                         ))}
 
 

@@ -34,12 +34,12 @@ const NavbarComponent = () => {
 
                 {/*  mobile menu  */}
                 {openNav && (
-                    <nav className='w-60 h-80 animate-nav bg-white absolute top-18 right-3 overflow-hidden md:hidden block'>
+                    <nav onClick={() => setTimeout(() => setOpenNav(false), 100)} className='w-60 h-80 animate-nav bg-white absolute top-18 right-3 overflow-hidden md:hidden block'>
                         <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/' >Home</Link>
-                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/' >Portfolio</Link>
-                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/' >About Me</Link>
-                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/' >Testimonial</Link>
-                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/' >Contact</Link>
+                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/portfolio' >Portfolio</Link>
+                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/about-me' >About Me</Link>
+                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/testimonial' >Testimonial</Link>
+                        <Link className='px-3 text-hover-primary duration-200 hover:bg-gray-300/40 hover:border-l-4 hover:border-yellow-500 py-3 block' to='/contact' >Contact</Link>
 
 
                     </nav>

@@ -1,6 +1,6 @@
 
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AnimationWrapper from '../utils/AnimationWrapper'
 import SectionWrapper from '../components/SectionWrapper.component'
 import About from '../components/About.component'
@@ -10,6 +10,9 @@ import Skills from '../components/Skills.component'
 import { skillsData } from '../../data'
 
 const AboutPage = () => {
+
+
+
   return (
     <AnimationWrapper className='pb-20 font-roboto'>
       <div className='md:pt-0 pt-24 section-color w-full md:p-5 lg:p-0 px-5'>
@@ -120,7 +123,7 @@ const AboutPage = () => {
         </div>
 
 
-        
+
         <div className='md:w-1/2 w-full mt-6 font-roboto'>
           <h1 className='text-xl font-semibold mb-2'>Photo</h1>
           <h1 className='text-4xl font-bold mb-5'>My Gallary</h1>

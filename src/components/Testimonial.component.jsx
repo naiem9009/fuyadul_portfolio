@@ -18,7 +18,7 @@ const Testimonial = ({rates=5, message, client = {name: "", degination: "", imag
           <i className="fi fi-sr-star"></i> */}
           {[...Array(rates)]?.filter((rate, i) => i <= 5)?.map((rate, index) => {
             return (
-              <i className="fi fi-sr-star"></i>
+              <i key={index} className="fi fi-sr-star"></i>
             )
             
           })}
@@ -26,7 +26,7 @@ const Testimonial = ({rates=5, message, client = {name: "", degination: "", imag
           {[...Array(leftRates)]?.filter((rate, i) => i <= 5)?.map((rate, index) => {
          
             return (
-              <i class="fi fi-rr-star"></i>
+              <i key={index} class="fi fi-rr-star"></i>
             )
             
           })}
