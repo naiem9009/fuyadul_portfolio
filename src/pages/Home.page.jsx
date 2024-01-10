@@ -1,11 +1,12 @@
 import AnimationWrapper from "../utils/AnimationWrapper.jsx"
 import SectionWrapper from "../components/SectionWrapper.component.jsx";
 import selfImage from "../assets/image/self-photo.png"
-import aboutMe from "../assets/image/About-Me.png"
+import aboutMeImage from "../assets/image/About-Me.png"
 import portfolioImage from "../assets/image/portfolio-image.png"
 import {Link} from "react-router-dom";
 import { skillsData } from "../../data.js";
 import Skills from "../components/Skills.component.jsx";
+import About from "../components/About.component.jsx";
 
 
 const HomePage = () => {
@@ -50,7 +51,7 @@ const HomePage = () => {
 
 
                     {/*<SectionWrapper>*/}
-                    <section id="about_me" className='mt-20 flex md:flex-row flex-col justify-around items-center font-roboto md:gap-0 gap-4'>
+                    {/* <section id="about_me" className='mt-20 flex md:flex-row flex-col justify-around items-center font-roboto md:gap-0 gap-4'>
 
                         <div className='md:w-1/3 w-3/4'>
                             <img className='w-full h-full object-cover' src={aboutMe} alt="Fuyadul Islam"/>
@@ -71,7 +72,8 @@ const HomePage = () => {
 
                         </div>
 
-                    </section>
+                    </section> */}
+                    <About aboutImage={aboutMeImage} />
                     {/*</SectionWrapper>*/}
 
 

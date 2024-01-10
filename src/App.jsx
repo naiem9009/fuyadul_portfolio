@@ -6,6 +6,7 @@ import HomePage from "./pages/Home.page.jsx";
 import Footer from "./components/Footer.component.jsx";
 import PortfolioPage from "./pages/Portfolio.page.jsx";
 import TestimonialPage from "./pages/Testimonial.page.jsx";
+import AboutPage from "./pages/About.page.jsx";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
           <Route path='/' element={<Navbar />} >
               <Route index element={<HomePage />} />
               <Route path="portfolio" element={<PortfolioPage />} />
-              <Route path="about-me" element={<PortfolioPage />} />
+              <Route path="about-me" element={<AboutPage />} />
               <Route path="testimonial" element={<TestimonialPage />} />
           </Route>
       </Routes>
