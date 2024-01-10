@@ -39,7 +39,7 @@ const HomePage = () => {
 
             <div className="md:p-5 lg:p-0 px-5">
                 <SectionWrapper>
-                    <div className='font-roboto mt-20'>
+                    <div className='font-roboto mt-20 mb-10'>
                         <h1 className='text-xl font-semibold'>My Skills</h1>
                         <h1 className='text-4xl font-bold'>My Skills</h1>
                     </div>
