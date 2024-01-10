@@ -4,6 +4,8 @@ import selfImage from "../assets/image/self-photo.png"
 import aboutMe from "../assets/image/About-Me.png"
 import portfolioImage from "../assets/image/portfolio-image.png"
 import {Link} from "react-router-dom";
+import { skillsData } from "../../data.js";
+import Skills from "../components/Skills.component.jsx";
 
 
 const HomePage = () => {
@@ -40,43 +42,15 @@ const HomePage = () => {
                     </div>
 
                     <div className='grid md:grid-cols-4 grid-cols md:gap-4 gap-2 font-roboto'>
-                        <div
-                            className='mt-10 section-color p-5 border-b-2 border-white hover:border-b-2 hover:border-[#5E3BEE] rounded-b-xl duration-100'>
-                            <i className="fi fi-rr-display-code text-4xl mb-2"></i>
-                            <h1 className='text-xl font-bold mb-2'>Strategy & Direction</h1>
-                            <p className='text-sm text-gray-500/60'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Suspendisse varius enim in eros elementum tristique.</p>
-                        </div>
-
-                        <div
-                            className='mt-10 section-color p-5 border-b-2 border-white hover:border-b-2 hover:border-[#5E3BEE] rounded-b-xl duration-100'>
-                            <i className="fi fi-rr-display-code text-4xl mb-2"></i>
-                            <h1 className='text-xl font-bold mb-2'>Strategy & Direction</h1>
-                            <p className='text-sm text-gray-500/60'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Suspendisse varius enim in eros elementum tristique.</p>
-                        </div>
-
-                        <div
-                            className='mt-10 section-color p-5 border-b-2 border-white hover:border-b-2 hover:border-[#5E3BEE] rounded-b-xl duration-100'>
-                            <i className="fi fi-rr-display-code text-4xl mb-2"></i>
-                            <h1 className='text-xl font-bold mb-2'>Strategy & Direction</h1>
-                            <p className='text-sm text-gray-500/60'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Suspendisse varius enim in eros elementum tristique.</p>
-                        </div>
-
-                        <div
-                            className='mt-10 section-color p-5 border-b-2 border-white hover:border-b-2 hover:border-[#5E3BEE] rounded-b-xl duration-100'>
-                            <i className="fi fi-rr-display-code text-4xl mb-2"></i>
-                            <h1 className='text-xl font-bold mb-2'>Strategy & Direction</h1>
-                            <p className='text-sm text-gray-500/60'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Suspendisse varius enim in eros elementum tristique.</p>
-                        </div>
+                        {skillsData?.filter((_item, index) => index < 4)?.map((item, index) => (
+                            <Skills key={index} icon={item.icon} heading={item.heading} content={item.content} />
+                        ))}
                     </div>
                     {/*</SectionWrapper>*/}
 
 
                     {/*<SectionWrapper>*/}
-                    <div className='mt-20 flex md:flex-row flex-col justify-around items-center font-roboto md:gap-0 gap-4'>
+                    <section id="about_me" className='mt-20 flex md:flex-row flex-col justify-around items-center font-roboto md:gap-0 gap-4'>
 
                         <div className='md:w-1/3 w-3/4'>
                             <img className='w-full h-full object-cover' src={aboutMe} alt="Fuyadul Islam"/>
@@ -97,7 +71,7 @@ const HomePage = () => {
 
                         </div>
 
-                    </div>
+                    </section>
                     {/*</SectionWrapper>*/}
 
 
@@ -265,8 +239,8 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        <div>
-                            <label htmlFor="">First Name</label>
+                        <div className="mt-2">
+                            <label htmlFor="">Message</label>
                             <textarea type="text" className='w-full h-40 p-3 border rounded-md mt-2' placeholder='Type your message'></textarea>
                         </div>
 
